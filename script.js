@@ -180,6 +180,7 @@ document.querySelectorAll(".ig-video-only").forEach((card) => {
 
     const updatePlayIcon = () => {
         const isPlaying = !video.paused && !video.ended;
+        playBtn.style.display = isPlaying ? "none" : "inline-flex";
         playBtn.setAttribute(
             "aria-label",
             isPlaying ? "Pause video" : "Play video",
@@ -211,6 +212,19 @@ document.querySelectorAll(".ig-video-only").forEach((card) => {
         } else {
             video.pause();
         }
+    });
+
+    video.addEventListener("click", async () => {
+        if (video.paused || video.ended) {
+            try {
+                await video.play();
+            } catch (error) {
+                console.warn("Video play was blocked", error);
+            }
+            return;
+        }
+
+        video.pause();
     });
 
     muteBtn.addEventListener("click", () => {
