@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blockchain Certification</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:url('img/bg.jpg') no-repeat center center fixed;
+    background-size:cover;
+    color:#fff;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
+}
+
+/* Header */
+.top-section{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.top-section h1{
+    font-size:48px;
+    font-weight:800;
+}
+
+.highlight{
+    color:#FFD400;
+}
+
+/* Layout */
+.content{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.left-content img{
+    max-width:500px;
+    width:100%;
+}
+
+/* Form */
+.form-card{
+    background:#2a3f7d;
+    padding:30px;
+    border-radius:15px;
+    max-width:400px;
+    width:100%;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.form-card h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.form-card input{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:none;
+    font-size:14px;
+}
+
+.form-card button{
+    width:100%;
+    padding:12px;
+    background:#FFD400;
+    border:none;
+    border-radius:8px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-card button:hover{
+    background:#ffc400;
+}
+
+/* Bottom */
+.bottom-section{
+    text-align:center;
+    margin-top:50px;
+}
+
+.bottom-section h2{
+    font-size:36px;
+    font-weight:800;
+}
+
+.bottom-section span{
+    color:#FFD400;
+}
+
+/* Snackbar */
+#snackbar{
+    visibility:hidden;
+    min-width:280px;
+    background-color:#ff4d4f;
+    color:#fff;
+    text-align:center;
+    border-radius:8px;
+    padding:14px 20px;
+    position:fixed;
+    z-index:99999;
+    left:50%;
+    bottom:30px;
+    transform:translateX(-50%);
+    font-size:14px;
+    opacity:0;
+    transition:all 0.4s ease;
+}
+
+#snackbar.show{
+    visibility:visible;
+    opacity:1;
+    bottom:50px;
+}
+
+#snackbar.success{
+    background-color:#28a745;
+}
+
+/* Preloader */
+#preloader{
+    position:fixed;
+    left:0;
+    top:0;
+    width:100vw;
+    height:100vh;
+    background:#0d1b3d;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.loader{
+    border:8px solid #2a3f7d;
+    border-top:8px solid #FFD400;
+    border-radius:50%;
+    width:70px;
+    height:70px;
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .top-section h1{font-size:30px;}
+    .bottom-section h2{font-size:24px;}
+}
+</style>
+</head>
+
+<body>
+
+<div id="preloader">
+    <div class="loader"></div>
+</div>
+
+<div id="snackbar"></div>
+
+<div class="container">
+
+    <div class="top-section">
+        <h1>Start Your <span class="highlight">15 LPA</span> Career with <span class="highlight">BLOCKCHAIN</span> Certification</h1>
+    </div>
+
+    <div class="content">
+
+        <div class="left-content">
+            <img src="img/professional.png" alt="Professional">
+        </div>
+
+        <div class="form-card">
+            <h2>Enroll Now</h2>
+
+            <form id="leadForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="text" name="qualification" placeholder="Qualification" required>
+                <button type="submit">Apply Now</button>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <h2><span>100%</span> Placement Guarantee</h2>
+    </div>
+
+</div>
+
+<script>
+const form = document.getElementById("leadForm");
+const preloader = document.getElementById("preloader");
+const snackbar = document.getElementById("snackbar");
+
+window.addEventListener("load",()=>{
+    preloader.style.display="none";
+});
+
+function showSnackbar(message,type="error"){
+    snackbar.textContent=message;
+    snackbar.className="show";
+    if(type==="success"){
+        snackbar.classList.add("success");
+    }
+    setTimeout(()=>{
+        snackbar.className=snackbar.className.replace("show","");
+    },3000);
+}
+
+form.addEventListener("submit",function(e){
+    e.preventDefault();
+
+    const name=this.name.value.trim();
+    const email=this.email.value.trim();
+    const phone=this.phone.value.trim();
+    const city=this.city.value.trim();
+    const qualification=this.qualification.value.trim();
+
+    if(!/^[A-Za-z ]{2,}$/.test(name)){
+        showSnackbar("Enter valid full name");
+        return;
+    }
+    if(!/^\S+@\S+\.\S+$/.test(email)){
+        showSnackbar("Enter valid email");
+        return;
+    }
+    if(!/^\d{10}$/.test(phone)){
+        showSnackbar("Enter valid 10 digit phone");
+        return;
+    }
+    if(city.length<2){
+        showSnackbar("Enter valid city");
+        return;
+    }
+    if(qualification.length<2){
+        showSnackbar("Enter qualification");
+        return;
+    }
+
+    preloader.style.display="flex";
+
+    const formData=new URLSearchParams();
+    formData.append("name",name);
+    formData.append("email",email);
+    formData.append("phone",phone);
+    formData.append("city",city);
+    formData.append("qualification",qualification);
+
+    fetch("https://script.google.com/macros/s/AKfycbxFlUqcht5-OAOBCnCizXpHJ249pnwCm-l3GNdp1kvKscWqt8InqZHi1hdJeR_CDQ7SsQ/exec",{
+        method:"POST",
+        body:formData,
+        mode:"no-cors"
+    })
+    .then(()=>{
+        showSnackbar("Form submitted successfully!","success");
+        setTimeout(()=>{
+            window.location.href="thankyou.html";
+        },1000);
+    })
+    .catch(()=>{
+        showSnackbar("Submission failed. Try again.");
+        preloader.style.display="none";
+    });
+});
+</script>
+
+<!-- Facebook Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init','YOUR_PIXEL_ID');
+fbq('track','PageView');
+</script>
+
+</body>
+</html>

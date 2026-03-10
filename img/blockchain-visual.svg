@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Blockchain Network Illustration</title>
+  <desc id="desc">Connected nodes and chains representing blockchain learning and career growth.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1f1a"/>
+      <stop offset="100%" stop-color="#1b4d3e"/>
+    </linearGradient>
+    <linearGradient id="node" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#22c55e"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg)"/>
+
+  <g stroke="#7ee7bf" stroke-width="4" opacity="0.5">
+    <line x1="170" y1="180" x2="430" y2="260"/>
+    <line x1="430" y1="260" x2="760" y2="210"/>
+    <line x1="760" y1="210" x2="1010" y2="310"/>
+    <line x1="170" y1="180" x2="280" y2="490"/>
+    <line x1="430" y1="260" x2="560" y2="520"/>
+    <line x1="760" y1="210" x2="680" y2="510"/>
+    <line x1="1010" y1="310" x2="910" y2="560"/>
+    <line x1="280" y1="490" x2="560" y2="520"/>
+    <line x1="560" y1="520" x2="680" y2="510"/>
+    <line x1="680" y1="510" x2="910" y2="560"/>
+    <line x1="280" y1="490" x2="380" y2="720"/>
+    <line x1="560" y1="520" x2="600" y2="740"/>
+    <line x1="910" y1="560" x2="760" y2="760"/>
+    <line x1="600" y1="740" x2="760" y2="760"/>
+    <line x1="380" y1="720" x2="600" y2="740"/>
+  </g>
+
+  <g filter="url(#glow)">
+    <g fill="url(#node)">
+      <circle cx="170" cy="180" r="22"/>
+      <circle cx="430" cy="260" r="22"/>
+      <circle cx="760" cy="210" r="22"/>
+      <circle cx="1010" cy="310" r="22"/>
+      <circle cx="280" cy="490" r="22"/>
+      <circle cx="560" cy="520" r="22"/>
+      <circle cx="680" cy="510" r="22"/>
+      <circle cx="910" cy="560" r="22"/>
+      <circle cx="380" cy="720" r="22"/>
+      <circle cx="600" cy="740" r="22"/>
+      <circle cx="760" cy="760" r="22"/>
+    </g>
+  </g>
+
+</svg>

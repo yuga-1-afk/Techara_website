@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-label="Career guidance visual">
+  <defs>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7c2d12"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="url(#g4)"/>
+  <rect x="110" y="95" width="980" height="510" rx="24" fill="#ffffff12"/>
+  <circle cx="370" cy="300" r="92" fill="#fb923c"/>
+  <circle cx="610" cy="300" r="92" fill="#fdba74"/>
+  <rect x="290" y="420" width="400" height="28" rx="14" fill="#ffedd5"/>
+  <rect x="740" y="190" width="260" height="70" rx="10" fill="#fed7aa"/>
+  <rect x="740" y="280" width="260" height="70" rx="10" fill="#ffedd5"/>
+  <rect x="740" y="370" width="260" height="70" rx="10" fill="#fed7aa"/>
+  <path d="M780 500 C850 450, 930 550, 1000 500" fill="none" stroke="#fdba74" stroke-width="10"/>
+  <circle cx="780" cy="500" r="12" fill="#fffbeb"/>
+  <circle cx="890" cy="500" r="12" fill="#fffbeb"/>
+  <circle cx="1000" cy="500" r="12" fill="#fffbeb"/>
+</svg>
