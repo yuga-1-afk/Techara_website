@@ -132,6 +132,66 @@
                 animation: float 3s ease-in-out infinite;
             }
 
+            @keyframes minimal-card-breathe {
+                0%,
+                100% {
+                    transform: translateY(0);
+                    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.12);
+                }
+                50% {
+                    transform: translateY(-2px);
+                    box-shadow: 0 12px 28px rgba(16, 185, 129, 0.18);
+                }
+            }
+
+            .minimal-modern-motion {
+                animation: minimal-card-breathe 3.2s ease-in-out infinite;
+                will-change: transform, box-shadow;
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .minimal-modern-motion {
+                    animation: none;
+                }
+            }
+
+            @keyframes glass-float-glow {
+                0%,
+                100% {
+                    transform: translateY(0) scale(1);
+                    box-shadow:
+                        0 14px 32px rgba(0, 116, 79, 0.2),
+                        0 0 0 1px rgba(16, 185, 129, 0.3),
+                        0 0 18px rgba(16, 185, 129, 0.18);
+                }
+                50% {
+                    transform: translateY(-4px) scale(1.02);
+                    box-shadow:
+                        0 20px 44px rgba(0, 116, 79, 0.3),
+                        0 0 0 1px rgba(16, 185, 129, 0.5),
+                        0 0 28px rgba(16, 185, 129, 0.28);
+                }
+            }
+
+            @keyframes glass-gradient-drift {
+                0% {
+                    background-position: 0% 50%;
+                }
+                50% {
+                    background-position: 100% 50%;
+                }
+                100% {
+                    background-position: 0% 50%;
+                }
+            }
+
+            .neon-glass-card {
+                background-size: 200% 200%;
+                animation:
+                    glass-float-glow 3.6s ease-in-out infinite,
+                    glass-gradient-drift 8s ease-in-out infinite;
+            }
+
             /* Local course video card */
             .ig-video-only {
                 overflow: hidden;
@@ -747,8 +807,58 @@
                         class="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12 font-medium"
                     >
                         Learn the skill that pays 2x-5x more than traditional IT
-                        roles—right here in Erode, offline and face-to-face.
+                        roles right here in Erode, offline and face-to-face.
                     </p>
+
+                    <style>
+                        @keyframes shine {
+                            0% {
+                                left: -100%;
+                            }
+                            100% {
+                                left: 100%;
+                            }
+                        }
+                        .animate-shine {
+                            animation: shine 3s infinite;
+                        }
+                    </style>
+
+                    <style>
+                        @keyframes shine {
+                            0% {
+                                left: -100%;
+                            }
+                            100% {
+                                left: 100%;
+                            }
+                        }
+                        .animate-shine {
+                            animation: shine 3s infinite;
+                        }
+                    </style>
+
+                    <div class="w-fit mx-auto mb-10 relative group">
+                        <div
+                            class="overflow-hidden relative flex items-center justify-center rounded-2xl backdrop-blur-xl px-12 py-5 shadow-[0_0_24px_rgba(0,0,0,0.16)] transition-all duration-300 hover:shadow-[0_0_34px_rgba(0,0,0,0.28)] hover:scale-105"
+                        >
+                            <div
+                                class="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-gray-200/20 to-transparent -skew-x-12 animate-shine"
+                            ></div>
+
+                            <h3
+                                class="relative z-10 text-2xl md:text-4xl text-black font-[800] tracking-tight"
+                            >
+                                Just
+                                <span
+                                    class="font-black text-[var(--primary-green)] tracking-normal ml-1 drop-shadow-[0_0_8px_rgba(0,0,0,0.28)]"
+                                >
+                                    ₹499
+                                </span>
+                            </h3>
+                        </div>
+                    </div>
+
                     <div
                         class="flex sm:flex-row items-center justify-center gap-6"
                     >
@@ -769,47 +879,6 @@
                                 >Limited to 20 seats per batch</span
                             >
                         </p>
-                    </div>
-                    <div
-                        class="mt-20 pt-10 border-t border-gray-100 grid grid-cols-3 gap-4 max-w-3xl mx-auto"
-                    >
-                        <div class="text-center">
-                            <div
-                                class="text-xl md:text-3xl font-black text-[var(--primary-green)] mb-1"
-                            >
-                                The Reality
-                            </div>
-                            <div
-                                class="text-[8px] md:text-[10px] uppercase tracking-[0.25em] font-bold text-black"
-                            >
-                                AI is taking jobs. Web3 is creating them.
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="text-xl md:text-3xl font-black text-[var(--primary-green)] mb-1"
-                            >
-                                The Expert
-                            </div>
-                            <div
-                                class="text-[8px] md:text-[10px] uppercase tracking-[0.25em] font-bold text-black"
-                            >
-                                Trained 70,000+ students globally.
-                            </div>
-                        </div>
-                        <div class="text-center">
-                            <div
-                                class="text-xl md:text-3xl font-black text-[var(--primary-green)] mb-1"
-                            >
-                                The Price
-                            </div>
-                            <div
-                                class="text-[8px] md:text-[10px] uppercase tracking-[0.25em] font-bold text-black"
-                            >
-                                ₹499 (Because high-end tech shouldn't just be
-                                for big cities).
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
