@@ -36,6 +36,19 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     });
 });
 
+const web3HeroBackground = document.querySelector('[data-web3-hero-bg="true"]');
+
+if (web3HeroBackground) {
+    const queryParams = new URLSearchParams(window.location.search);
+    const shouldShowWeb3Background = Array.from(queryParams.entries()).some(
+        ([key, value]) => `${key}=${value}`.toLowerCase().includes("web3"),
+    );
+
+    if (shouldShowWeb3Background) {
+        web3HeroBackground.classList.remove("hidden");
+    }
+}
+
 const enrollModal = document.getElementById("enrollModal");
 const closeEnrollModalButton = document.getElementById("closeEnrollModal");
 const thankyouModal = document.getElementById("thankyouModal");
