@@ -279,13 +279,42 @@ if (form) {
     const emailInput = document.getElementById("email");
     const phoneInput = document.getElementById("phone");
     const qualificationInput = document.getElementById("qualification");
+    const sessionDateInput = document.getElementById("sessionDate");
+    const sessionTimeSelect = document.getElementById("sessionTime");
     const programSelect = document.getElementById("program");
 
     const fullNameError = document.getElementById("fullNameError");
     const emailError = document.getElementById("emailError");
     const phoneError = document.getElementById("phoneError");
     const qualificationError = document.getElementById("qualificationError");
+    const sessionDateError = document.getElementById("sessionDateError");
+    const sessionTimeError = document.getElementById("sessionTimeError");
     const programError = document.getElementById("programError");
+
+    const getTodayAsLocalISODate = () => {
+        const now = new Date();
+        const local = new Date(
+            now.getTime() - now.getTimezoneOffset() * 60 * 1000,
+        );
+        return local.toISOString().split("T")[0];
+    };
+
+    const setDefaultSessionFields = () => {
+        const today = getTodayAsLocalISODate();
+
+        if (sessionDateInput) {
+            sessionDateInput.min = today;
+            if (!sessionDateInput.value) {
+                sessionDateInput.value = today;
+            }
+        }
+
+        if (sessionTimeSelect && !sessionTimeSelect.value) {
+            sessionTimeSelect.value = "10:00 AM - 1:00 PM";
+        }
+    };
+
+    setDefaultSessionFields();
 
     const clearErrors = () => {
         [
@@ -293,6 +322,8 @@ if (form) {
             emailError,
             phoneError,
             qualificationError,
+            sessionDateError,
+            sessionTimeError,
             programError,
         ].forEach((el) => {
             if (!el) return;
@@ -310,6 +341,8 @@ if (form) {
         const email = emailInput.value.trim();
         const phone = phoneInput.value.trim();
         const qualification = qualificationInput.value.trim();
+        const sessionDate = sessionDateInput.value;
+        const sessionTime = sessionTimeSelect.value;
         const program = programSelect.value;
 
         let hasError = false;
@@ -354,6 +387,26 @@ if (form) {
             hasError = true;
         }
 
+        if (!sessionDate) {
+            sessionDateError.textContent = "Please select a date.";
+            sessionDateError.classList.remove("hidden");
+            hasError = true;
+        } else {
+            const today = getTodayAsLocalISODate();
+            if (sessionDate < today) {
+                sessionDateError.textContent =
+                    "Please select today or a future date.";
+                sessionDateError.classList.remove("hidden");
+                hasError = true;
+            }
+        }
+
+        if (!sessionTime) {
+            sessionTimeError.textContent = "Please select a timing.";
+            sessionTimeError.classList.remove("hidden");
+            hasError = true;
+        }
+
         if (!program) {
             programError.textContent = "Please select a program.";
             programError.classList.remove("hidden");
@@ -384,12 +437,14 @@ if (form) {
             email,
             phone,
             qualification,
+            sessionDate,
+            sessionTime,
             program,
         };
 
         try {
             const response = await fetch(
-                "https://script.google.com/macros/s/AKfycbwm_RZT5z4GSG1FG0xGgcYxgCw0myjy8bdhcVMUfJe-Z0YIwyOCM6cVS-77G3mYi7o/exec",
+                "https://script.google.com/macros/s/AKfycbzENT48dy2IyXBlQrn8gCz4gMswzQ_UA-TO09Fop5Y7C7XPmlbjvL4y6_qHIRbGk0JC/exec",
                 {
                     method: "POST",
                     body: JSON.stringify(data),
@@ -404,6 +459,7 @@ if (form) {
                     enrollModal.setAttribute("aria-hidden", "true");
                 }
                 form.reset();
+                setDefaultSessionFields();
                 submitBtn.disabled = false;
                 submitBtn.classList.remove("opacity-70", "cursor-not-allowed");
                 submitBtn.innerHTML = originalText;
