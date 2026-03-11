@@ -775,7 +775,7 @@
         <main>
             <section
                 id="top"
-                class="relative overflow-hidden bg-[#f4f7f6] section-grid"
+                class="relative overflow-hidden bg-[#f4f7f6] section-grid min-h-[70vh] md:min-h-0"
             >
                 <div
                     class="absolute inset-0 bg-center bg-cover"
@@ -785,39 +785,44 @@
                     class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/65 to-black/55"
                 ></div>
                 <div
-                    class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center"
+                    class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center min-h-[70vh] md:min-h-0 flex flex-col items-center justify-center"
                 >
-                    <div
-                        class="inline-flex items-center gap-2 px-4 py-1 rounded border border-white/25 bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-[0.2em] mb-12"
-                    >
-                        <span class="relative flex h-2 w-2">
-                            <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
-                            ></span>
-                            <span
-                                class="relative inline-flex rounded-full h-2 w-2 bg-emerald-200"
-                            ></span>
-                        </span>
-                        Admissions Open
-                    </div>
                     <h1
                         class="text-sm md:text-7xl font-black leading-tight mb-6 text-white"
                     >
-                        With Learner's Reviews,
+                        Learn Block Chain at
                         <span class="text-[var(--primary-green)]"
-                            >First Time in India.</span
+                            >Just ₹499</span
                         >
+                        <span class="text-white/75 line-through">/ ₹1299</span>
                     </h1>
                     <p
                         class="text-sm md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-medium"
                     >
-                        Industry-led experts, live at 499. Don't miss the
-                        opportunity to learn everything you need about
-                        blockchain at ₹499.
+                        Make career shift at just
+                        <span class="font-black text-[var(--primary-green)]"
+                            >₹499</span
+                        >
+                        <span class="line-through text-white/75">/ ₹1299</span>
+                        <br />
+                        Learn Block chain development as a career path.
                     </p>
 
                     <div
-                        class="flex sm:flex-row items-center justify-center gap-6"
+                        class="mb-8 flex flex-col sm:flex-row items-center justify-center gap-3"
+                    >
+                        <span
+                            class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-[0.12em] text-white"
+                            >Trained by industry lead experts</span
+                        >
+                        <span
+                            class="inline-flex items-center rounded-full border border-white/35 bg-white/10 px-4 py-1.5 text-[10px] md:text-xs font-black uppercase tracking-[0.12em] text-white"
+                            >Limited seates are availabe</span
+                        >
+                    </div>
+
+                    <div
+                        class="flex sm:flex-row w-full items-center justify-center gap-6"
                     >
                         <a
                             href="#"
@@ -826,11 +831,79 @@
                         >
                             Book today
                         </a>
+                        <a
+                            href="#contact"
+                            class="w-full sm:w-auto border border-white/70 p-2 rounded font-extrabold text-xs md:text-lg uppercase tracking-tight bg-white hover:scale-105 text-[var(--primary-green)] transition-all shadow-lg shadow-black/30"
+                        >
+                            Get Help
+                        </a>
                     </div>
                 </div>
             </section>
 
             <section class="max-w-6xl mx-auto md:p-6 font-sans text-gray-900">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                    <div
+                        class="relative overflow-hidden rounded-xl border border-amber-200/70 px-4 py-3"
+                    >
+                        <div
+                            class="absolute -right-5 -top-5 h-16 w-16 rounded-full bg-amber-200/40 blur-xl"
+                        ></div>
+                        <div class="relative flex items-center gap-3">
+                            <span
+                                class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 border border-amber-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] text-amber-500"
+                                    >stars</span
+                                >
+                            </span>
+                            <div>
+                                <p
+                                    class="text-[10px] font-black uppercase tracking-[0.2em] text-amber-700"
+                                >
+                                    Learner Rating
+                                </p>
+                                <p
+                                    class="text-lg leading-none font-black text-gray-900 mt-1"
+                                >
+                                    4.5/5 Reviews
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="relative overflow-hidden rounded-xl border border-emerald-200/80 px-4 py-3"
+                    >
+                        <div
+                            class="absolute -right-5 -top-5 h-16 w-16 rounded-full bg-emerald-200/40 blur-xl"
+                        ></div>
+                        <div class="relative flex items-center gap-3">
+                            <span
+                                class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 border border-emerald-200"
+                            >
+                                <span
+                                    class="material-symbols-outlined text-[20px] text-[var(--primary-green)]"
+                                    >school</span
+                                >
+                            </span>
+                            <div>
+                                <p
+                                    class="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-700"
+                                >
+                                    Student Impact
+                                </p>
+                                <p
+                                    class="text-lg leading-none font-black text-gray-900 mt-1"
+                                >
+                                    3K+ Students Trained
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="flex justify-between items-center mb-6">
                     <div class="flex gap-3">
                         <div
@@ -950,7 +1023,7 @@
                                 >
                                     <span
                                         class="text-gray-400 line-through decoration-2"
-                                        >₹1099</span
+                                        >₹1299</span
                                     >
                                     <span
                                         class="text-[28px] leading-none text-[var(--primary-green)]"
@@ -990,6 +1063,9 @@
                                     class="w-full sm:w-auto bg-[var(--primary-green)] hover:brightness-110 text-white font-semibold py-3 px-6 rounded text-[15px] transition shadow-sm whitespace-nowrap"
                                 >
                                     Enroll at ₹499
+                                    <span class="line-through text-white/75"
+                                        >/ ₹1299</span
+                                    >
                                 </button>
                             </div>
                         </div>
@@ -1231,9 +1307,12 @@
                     <h2
                         class="text-3xl md:text-5xl font-black text-center tracking-tight text-[var(--text-dark)]"
                     >
-                        Boost Your Salary with
+                        Boost Your Salary at
                         <span class="text-[var(--primary-green)]"
-                            >Blockchain Learning</span
+                            >Just ₹499</span
+                        >
+                        <span class="text-gray-500/75 line-through"
+                            >/ ₹1299</span
                         >
                     </h2>
                     <p
@@ -1331,9 +1410,15 @@
                         <h2
                             class="text-3xl md:text-5xl font-black tracking-tight text-[var(--text-dark)]"
                         >
-                            One Small Investment,
+                            Invest
+                            <span class="text-[var(--primary-green)]"
+                                >₹499</span
+                            >
+                            <span class="text-gray-500 line-through"
+                                >/ ₹1299</span
+                            >
                             <br class="hidden md:block" />
-                            One Big Career Shift
+                            for one day and make a career shift
                         </h2>
                     </div>
 
@@ -1543,6 +1628,10 @@
                                             class="text-6xl md:text-7xl font-black text-white leading-none"
                                         >
                                             ₹499
+                                            <span
+                                                class="line-through text-white/75"
+                                                >/ ₹1299</span
+                                            >
                                         </p>
                                         <p
                                             class="text-white/90 text-sm font-medium mt-3"
@@ -1557,13 +1646,21 @@
 
                             <div class="p-8 md:p-10">
                                 <p class="text-sm text-gray-600 font-medium">
-                                    What this ₹499 session can unlock
+                                    What this ₹499
+                                    <span class="line-through text-gray-500"
+                                        >/ ₹1299
+                                    </span>
+                                    session can unlock
                                 </p>
                                 <h3
-                                    class="text-2xl md:text-4xl font-black text-[var(--text-dark)] mt-2 leading-tight"
+                                    class="text-2xl md:text-3xl font-black text-[var(--text-dark)] mt-2 leading-tight"
                                 >
-                                    "Your life may change at ₹499 - from
-                                    confusion to blockchain career clarity."
+                                    "Your life may change at ₹499
+                                    <span class="line-through text-gray-500">
+                                        ₹1299</span
+                                    >
+                                    - from confusion to blockchain career
+                                    clarity."
                                 </h3>
                                 <p
                                     class="text-base text-gray-700 mt-5 leading-relaxed font-medium"
@@ -1606,6 +1703,9 @@
                                     class="mt-7 inline-flex items-center justify-center rounded-lg bg-[var(--primary-green)] text-white px-6 py-3 text-sm font-black uppercase tracking-[0.12em] hover:brightness-110 transition-all"
                                 >
                                     Start My Blockchain Journey at ₹499
+                                    <span class="line-through text-white/75"
+                                        >/ ₹1299</span
+                                    >
                                 </a>
                             </div>
                         </div>
@@ -1661,7 +1761,12 @@
                                                     class="relative inline-flex rounded-full h-2 w-2 bg-[var(--primary-green)]"
                                                 ></span>
                                             </span>
-                                            499 INR Entry Course
+                                            499
+                                            <span
+                                                class="line-through text-white/75"
+                                                >/ ₹1299</span
+                                            >
+                                            INR Entry Course
                                         </div>
 
                                         <p
@@ -1747,6 +1852,10 @@
                                                 class="text-lg md:text-3xl font-black text-[var(--primary-green)]"
                                             >
                                                 499 INR
+                                                <span
+                                                    class="line-through text-white/75"
+                                                    >/ ₹1299 INR</span
+                                                >
                                             </p>
                                             <p
                                                 class="text-xs text-gray-600 mt-1"
@@ -2019,6 +2128,9 @@
                             class="text-sm font-black text-[var(--primary-green)]"
                         >
                             ₹499 Only
+                            <span class="line-through text-white/75"
+                                >/ ₹1299</span
+                            >
                         </p>
                     </div>
                     <a
