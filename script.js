@@ -153,6 +153,34 @@ if (mobileMenuButton && mobileMenu) {
     });
 }
 
+const offerCountdown = document.querySelector('[data-offer-countdown="true"]');
+
+if (offerCountdown) {
+    const formatWithLeadingZero = (value) => String(value).padStart(2, "0");
+
+    const updateOfferCountdown = () => {
+        const now = new Date();
+        const endOfDay = new Date(now);
+        endOfDay.setHours(23, 59, 59, 999);
+
+        const diff = endOfDay.getTime() - now.getTime();
+        if (diff <= 0) {
+            offerCountdown.textContent = "00:00:00";
+            return;
+        }
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const hours = Math.floor(totalSeconds / 3600);
+        const minutes = Math.floor((totalSeconds % 3600) / 60);
+        const seconds = totalSeconds % 60;
+
+        offerCountdown.textContent = `${formatWithLeadingZero(hours)}:${formatWithLeadingZero(minutes)}:${formatWithLeadingZero(seconds)}`;
+    };
+
+    updateOfferCountdown();
+    setInterval(updateOfferCountdown, 1000);
+}
+
 document.querySelectorAll(".ig-video-only").forEach((card) => {
     if (card.querySelector(".ig-control-btn")) return;
 

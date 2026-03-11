@@ -69,6 +69,19 @@
                 background-size: 40px 40px;
             }
 
+            @keyframes shine {
+                0% {
+                    left: -100%;
+                }
+                100% {
+                    left: 100%;
+                }
+            }
+
+            .animate-shine {
+                animation: shine 3s linear infinite;
+            }
+
             /* Keep vertical spacing consistent across top-level sections */
             main > section {
                 padding-top: 3.5rem !important;
@@ -762,102 +775,45 @@
         <main>
             <section
                 id="top"
-                class="relative flex items-center justify-center overflow-hidden hero-bg section-grid"
-                style="
-                    background:
-                        url(&quot;img/bg.jpg&quot;) center center/cover
-                            no-repeat,
-                        radial-gradient(
-                            circle at 50% 50%,
-                            rgba(0, 116, 79, 0.09) 0%,
-                            transparent 70%
-                        );
-                "
+                class="relative overflow-hidden bg-[#f4f7f6] section-grid"
             >
-                <div class="absolute inset-0 bg-white z-0"></div>
-                <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+                <div
+                    class="absolute inset-0 bg-center bg-cover"
+                    style="background-image: url(&quot;img/bg.jpg&quot;)"
+                ></div>
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/65 to-black/55"
+                ></div>
+                <div
+                    class="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-24 text-center"
+                >
                     <div
-                        class="inline-flex items-center gap-2 px-4 py-1 rounded border border-[#00744F]/20 bg-[#00744F]/5 text-[var(--primary-green)] text-[10px] font-extrabold uppercase tracking-[0.2em] mb-12"
+                        class="inline-flex items-center gap-2 px-4 py-1 rounded border border-white/25 bg-white/10 text-white text-[10px] font-extrabold uppercase tracking-[0.2em] mb-12"
                     >
                         <span class="relative flex h-2 w-2">
                             <span
-                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--primary-green)] opacity-75"
+                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300 opacity-75"
                             ></span>
                             <span
-                                class="relative inline-flex rounded-full h-2 w-2 bg-[var(--primary-green)]"
+                                class="relative inline-flex rounded-full h-2 w-2 bg-emerald-200"
                             ></span>
                         </span>
                         Admissions Open
                     </div>
-                    <p
-                        class="text-xs md:text-sm font-black uppercase tracking-[0.3em] text-gray-500 mb-4"
-                    >
-                        Increase Your Salary with Future-Proof Blockchain
-                        Skills.
-                    </p>
                     <h1
-                        class="text-sm md:text-7xl font-black leading-tight mb-8 text-[var(--text-dark)]"
+                        class="text-sm md:text-7xl font-black leading-tight mb-6 text-white"
                     >
-                        Boost Your Income with the
+                        Build Your
                         <span class="text-[var(--primary-green)]"
-                            >Blockchain Career Growth Blueprint.</span
+                            >Blockchain Career Blueprint.</span
                         >
                     </h1>
                     <p
-                        class="text-sm md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed mb-12 font-medium"
+                        class="text-sm md:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-10 font-medium"
                     >
-                        Learn the skill that pays 2x-5x more than traditional IT
-                        roles right here in Erode, offline and face-to-face.
+                        Learn practical blockchain skills offline in Erode and
+                        unlock better-paying career opportunities.
                     </p>
-
-                    <style>
-                        @keyframes shine {
-                            0% {
-                                left: -100%;
-                            }
-                            100% {
-                                left: 100%;
-                            }
-                        }
-                        .animate-shine {
-                            animation: shine 3s infinite;
-                        }
-                    </style>
-
-                    <style>
-                        @keyframes shine {
-                            0% {
-                                left: -100%;
-                            }
-                            100% {
-                                left: 100%;
-                            }
-                        }
-                        .animate-shine {
-                            animation: shine 3s infinite;
-                        }
-                    </style>
-
-                    <div class="w-fit mx-auto mb-10 relative group">
-                        <div
-                            class="overflow-hidden relative flex items-center justify-center rounded-2xl backdrop-blur-xl px-12 py-5 shadow-[0_0_24px_rgba(0,0,0,0.16)] transition-all duration-300 hover:shadow-[0_0_34px_rgba(0,0,0,0.28)] hover:scale-105"
-                        >
-                            <div
-                                class="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-gray-200/20 to-transparent -skew-x-12 animate-shine"
-                            ></div>
-
-                            <h3
-                                class="relative z-10 text-2xl md:text-4xl text-black font-[800] tracking-tight"
-                            >
-                                Just
-                                <span
-                                    class="font-black text-[var(--primary-green)] tracking-normal ml-1 drop-shadow-[0_0_8px_rgba(0,0,0,0.28)]"
-                                >
-                                    ₹499
-                                </span>
-                            </h3>
-                        </div>
-                    </div>
 
                     <div
                         class="flex sm:flex-row items-center justify-center gap-6"
@@ -865,13 +821,13 @@
                         <a
                             href="#"
                             data-open-enroll="true"
-                            class="w-full sm:w-auto bg-[var(--primary-green)] text-white p-2 rounded font-extrabold text-xs md:text-lg uppercase tracking-tight hover:scale-105 transition-all shadow-lg shadow-[#00744F]/20"
+                            class="w-full sm:w-auto bg-[var(--primary-green)] text-white p-2 rounded font-extrabold text-xs md:text-lg uppercase tracking-tight hover:scale-105 transition-all shadow-lg shadow-black/30"
                         >
                             Reserve My Seat in Erode
                         </a>
 
                         <p
-                            class="text-[10px] md:text-[11px] w-full md:text-xs text-black max-w-xs text-center sm:text-left border border-black rounded p-2"
+                            class="text-[10px] md:text-[11px] w-full md:text-xs text-white max-w-xs text-center sm:text-left border border-white/35 bg-black/25 rounded p-2"
                         >
                             Morning Batch: 10 AM – 1 PM |
                             <span
@@ -883,7 +839,541 @@
                 </div>
             </section>
 
-            <section class="pt-24 section-grid" id="why-learn">
+            <section class="py-24 bg-gray-100 section-grid" id="salary-growth">
+                <div class="max-w-7xl mx-auto px-6">
+                    <h2
+                        class="text-3xl md:text-5xl font-black text-center tracking-tight text-[var(--text-dark)]"
+                    >
+                        Boost Your Salary with
+                        <span class="text-[var(--primary-green)]"
+                            >Blockchain Learning</span
+                        >
+                    </h2>
+                    <p
+                        class="text-sm md:text-base text-center text-gray-600 mt-4 max-w-3xl mx-auto font-medium"
+                    >
+                        Learn practical blockchain skills and move from low-pay
+                        local roles to high-growth Web3 opportunities.
+                    </p>
+
+                    <div
+                        class="mt-14 grid grid-cols-2 md:grid-cols-3 gap-8 text-center"
+                    >
+                        <div>
+                            <div
+                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
+                            >
+                                2x
+                            </div>
+                            <p
+                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
+                            >
+                                Salary Growth Potential
+                            </p>
+                            <div
+                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+                            >
+                                <p
+                                    class="text-sm font-black text-[var(--text-dark)]"
+                                >
+                                    Traditional IT Roles
+                                </p>
+                                <p class="text-xs text-gray-600 mt-1">
+                                    Typical salary band in crowded local hiring.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div
+                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
+                            >
+                                3x
+                            </div>
+                            <p
+                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
+                            >
+                                Salary Growth Potential
+                            </p>
+                            <div
+                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+                            >
+                                <p
+                                    class="text-sm font-black text-[var(--text-dark)]"
+                                >
+                                    Blockchain + Web3 Skills
+                                </p>
+                                <p class="text-xs text-gray-600 mt-1">
+                                    Higher-value roles with global demand.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-span-2 md:col-span-1">
+                            <div
+                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
+                            >
+                                5x
+                            </div>
+                            <p
+                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
+                            >
+                                Salary Growth Potential
+                            </p>
+                            <div
+                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
+                            >
+                                <p
+                                    class="text-sm font-black text-[var(--text-dark)]"
+                                >
+                                    Remote Web3 Career Path
+                                </p>
+                                <p class="text-xs text-gray-600 mt-1">
+                                    Top upside with portfolio and practical
+                                    proof.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="max-w-6xl mx-auto p-6 font-sans text-gray-900">
+                <div class="flex justify-between items-center mb-6">
+                    <div class="flex gap-3">
+                        <div
+                            class="flex items-center gap-1.5 border border-gray-300 rounded px-2 py-1 bg-gray-50"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-4 h-4 text-gray-800"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"
+                                />
+                            </svg>
+                            <span
+                                class="text-xs font-bold text-gray-800 uppercase tracking-wide"
+                                >Offline Batch</span
+                            >
+                        </div>
+
+                        <div
+                            class="flex items-center gap-1.5 border border-yellow-300 rounded px-2 py-1 bg-yellow-50/50"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-4 h-4 text-yellow-600"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            <span
+                                class="text-xs font-bold text-yellow-700 uppercase tracking-wide"
+                                >Offer Ends Today</span
+                            >
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <button
+                            class="text-blue-600 hover:text-blue-800 transition"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-5 h-5"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            class="text-blue-600 hover:text-blue-800 transition"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-5 h-5"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col lg:flex-row justify-between gap-10">
+                    <div class="flex-1">
+                        <h1
+                            class="text-4xl md:text-[2.75rem] font-extrabold text-[#19193a] mb-6 leading-tight"
+                        >
+                            Blockchain Career Growth Session
+                        </h1>
+
+                        <div class="flex items-center gap-4 mb-8">
+                            <div class="flex items-center gap-2">
+                                <div
+                                    class="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm"
+                                >
+                                    T
+                                </div>
+                                <p class="text-[15px] text-gray-700">
+                                    By
+                                    <span class="font-semibold text-gray-900"
+                                        >TechAra Blockchain Institute</span
+                                    >
+                                </p>
+                            </div>
+                            <button
+                                class="px-4 py-1.5 border border-gray-200 rounded text-[15px] font-medium text-gray-700 hover:bg-gray-50 transition"
+                            >
+                                Mentor-Led Training
+                            </button>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-3 mb-4 text-[15px] text-gray-700"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2"
+                                stroke="currentColor"
+                                class="w-5 h-5 mt-0.5 shrink-0 text-gray-600"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                                />
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+                                />
+                            </svg>
+                            <p>TechAra Campus - Erode · Tamil Nadu</p>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-[480px]">
+                        <div
+                            class="border border-gray-100 shadow-[0_4px_24px_-4px_rgba(0,0,0,0.06)] rounded-xl p-6 bg-white flex flex-col sm:flex-row justify-between items-start sm:items-end gap-5"
+                        >
+                            <div class="flex flex-col flex-1">
+                                <span
+                                    class="text-[12px] font-black uppercase tracking-[0.18em] text-gray-500"
+                                    >Special Offer</span
+                                >
+                                <div
+                                    class="mt-2 flex items-end gap-3 text-[17px] font-bold"
+                                >
+                                    <span
+                                        class="text-gray-400 line-through decoration-2"
+                                        >₹1099</span
+                                    >
+                                    <span
+                                        class="text-[28px] leading-none text-[var(--primary-green)]"
+                                        >₹499</span
+                                    >
+                                </div>
+                                <span class="text-[13px] text-gray-500 mt-2"
+                                    >Save ₹600 on your first session</span
+                                >
+                            </div>
+                            <div
+                                class="w-full sm:w-auto flex flex-col items-stretch sm:items-end gap-3"
+                            >
+                                <div
+                                    class="relative inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-300 bg-gradient-to-r from-emerald-100 via-emerald-50 to-white px-3.5 py-2 shadow-[0_8px_20px_rgba(16,185,129,0.18)]"
+                                >
+                                    <span
+                                        class="absolute -left-1 -top-1 h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping"
+                                    ></span>
+                                    <span
+                                        class="material-symbols-outlined text-[16px] leading-none text-emerald-700"
+                                        >timer</span
+                                    >
+                                    <span
+                                        class="text-[10px] font-black uppercase tracking-[0.16em] text-emerald-700"
+                                        >Offer Ends In</span
+                                    >
+                                    <span
+                                        id="offerCountdown"
+                                        data-offer-countdown="true"
+                                        class="text-base font-black text-emerald-900 tabular-nums tracking-[0.05em]"
+                                        >--:--:--</span
+                                    >
+                                </div>
+                                <button
+                                    data-open-enroll="true"
+                                    class="w-full sm:w-auto bg-[var(--primary-green)] hover:brightness-110 text-white font-semibold py-3 px-6 rounded text-[15px] transition shadow-sm whitespace-nowrap"
+                                >
+                                    Enroll at ₹499
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="py-20 bg-white section-grid"
+                id="program-highlights"
+            >
+                <div class="max-w-7xl mx-auto px-6">
+                    <div
+                        class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+                    >
+                        <div>
+                            <p
+                                class="text-[11px] font-black uppercase tracking-[0.24em] text-[var(--primary-green)]"
+                            >
+                                Program Modules
+                            </p>
+                            <h2
+                                class="mt-3 text-3xl md:text-5xl font-black tracking-tight text-[var(--text-dark)]"
+                            >
+                                Complete
+                                <span class="text-[var(--primary-green)]"
+                                    >Web3 Career Roadmap</span
+                                >
+                            </h2>
+                            <p
+                                class="mt-4 text-sm md:text-base text-gray-600 font-medium"
+                            >
+                                4 structured modules designed for beginners to
+                                move from confusion to practical Web3 clarity.
+                            </p>
+
+                            <div class="mt-6 space-y-4">
+                                <div
+                                    class="rounded-xl border border-emerald-200 bg-emerald-50/50 px-4 py-4"
+                                >
+                                    <p
+                                        class="text-xs font-black uppercase tracking-[0.14em] text-emerald-700"
+                                    >
+                                        Module 1 - Why You Are Already Late to
+                                        Web3
+                                    </p>
+                                    <ul
+                                        class="mt-2 space-y-1.5 text-sm font-semibold text-gray-800"
+                                    >
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-600 shrink-0"
+                                            ></span
+                                            ><span
+                                                >Current job market crisis</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-600 shrink-0"
+                                            ></span
+                                            ><span>AI vs Traditional Jobs</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-600 shrink-0"
+                                            ></span
+                                            ><span
+                                                >Why blockchain salaries are
+                                                higher</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-600 shrink-0"
+                                            ></span
+                                            ><span
+                                                >Web2 vs Web3 difference</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="rounded-xl border border-gray-200 bg-white px-4 py-4"
+                                >
+                                    <p
+                                        class="text-xs font-black uppercase tracking-[0.14em] text-[var(--primary-green)]"
+                                    >
+                                        Module 2 - Blockchain Made Simple
+                                    </p>
+                                    <ul
+                                        class="mt-2 space-y-1.5 text-sm font-semibold text-gray-800"
+                                    >
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >What is Blockchain (Real Use
+                                                Case Explanation)</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >Bitcoin vs Ethereum vs Other
+                                                Chains</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >Smart Contracts Concept</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="rounded-xl border border-gray-200 bg-white px-4 py-4"
+                                >
+                                    <p
+                                        class="text-xs font-black uppercase tracking-[0.14em] text-[var(--primary-green)]"
+                                    >
+                                        Module 3 - Web3 Career Roadmap
+                                    </p>
+                                    <ul
+                                        class="mt-2 space-y-1.5 text-sm font-semibold text-gray-800"
+                                    >
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span>Developer Path</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span>Crypto Analyst Path</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span>NFT and Marketing Path</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >Women-Friendly Career
+                                                Options</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div
+                                    class="rounded-xl border border-gray-200 bg-white px-4 py-4"
+                                >
+                                    <p
+                                        class="text-xs font-black uppercase tracking-[0.14em] text-[var(--primary-green)]"
+                                    >
+                                        Module 4 - Live Demo
+                                    </p>
+                                    <ul
+                                        class="mt-2 space-y-1.5 text-sm font-semibold text-gray-800"
+                                    >
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span>Wallet Creation</span>
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >Blockchain Explorer
+                                                Walkthrough</span
+                                            >
+                                        </li>
+                                        <li class="flex items-start gap-2">
+                                            <span
+                                                class="mt-0.5 h-1.5 w-1.5 rounded-full bg-[var(--primary-green)] shrink-0"
+                                            ></span
+                                            ><span
+                                                >Real Transaction Tracking -
+                                                Coding in Practical Flow</span
+                                            >
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div
+                            class="relative overflow-hidden rounded-2xl border border-emerald-200 shadow-lg"
+                        >
+                            <img
+                                src="img/blockchain-visual.svg"
+                                alt="Blockchain learning visual"
+                                class="h-full w-full object-cover"
+                            />
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/10 to-transparent"
+                            ></div>
+                            <div class="absolute bottom-5 left-5 right-5">
+                                <p
+                                    class="inline-flex items-center gap-2 rounded-full bg-white/95 px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em] text-[var(--primary-green)]"
+                                >
+                                    <span
+                                        class="material-symbols-outlined text-sm"
+                                        >school</span
+                                    >
+                                    Offline Practical Session
+                                </p>
+                                <p
+                                    class="mt-3 text-white text-lg md:text-2xl font-black leading-tight"
+                                >
+                                    Learn Once, Apply Immediately.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <section class="pt-24 section-grid" id="why-learn">
                 <div class="max-w-7xl mx-auto px-6">
                     <div class="text-center mb-10">
                         <h2
@@ -1190,106 +1680,7 @@
                         </div>
                     </div>
                 </div>
-            </section>
-
-            <section class="py-24 bg-gray-100 section-grid" id="salary-growth">
-                <div class="max-w-7xl mx-auto px-6">
-                    <h2
-                        class="text-3xl md:text-5xl font-black text-center tracking-tight text-[var(--text-dark)]"
-                    >
-                        Boost Your Salary with
-                        <span class="text-[var(--primary-green)]"
-                            >Blockchain Learning</span
-                        >
-                    </h2>
-                    <p
-                        class="text-sm md:text-base text-center text-gray-600 mt-4 max-w-3xl mx-auto font-medium"
-                    >
-                        Learn practical blockchain skills and move from low-pay
-                        local roles to high-growth Web3 opportunities.
-                    </p>
-
-                    <div
-                        class="mt-14 grid grid-cols-2 md:grid-cols-3 gap-8 text-center"
-                    >
-                        <div>
-                            <div
-                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
-                            >
-                                2x
-                            </div>
-                            <p
-                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
-                            >
-                                Salary Growth Potential
-                            </p>
-                            <div
-                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
-                            >
-                                <p
-                                    class="text-sm font-black text-[var(--text-dark)]"
-                                >
-                                    Traditional IT Roles
-                                </p>
-                                <p class="text-xs text-gray-600 mt-1">
-                                    Typical salary band in crowded local hiring.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div>
-                            <div
-                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
-                            >
-                                3x
-                            </div>
-                            <p
-                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
-                            >
-                                Salary Growth Potential
-                            </p>
-                            <div
-                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
-                            >
-                                <p
-                                    class="text-sm font-black text-[var(--text-dark)]"
-                                >
-                                    Blockchain + Web3 Skills
-                                </p>
-                                <p class="text-xs text-gray-600 mt-1">
-                                    Higher-value roles with global demand.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-span-2 md:col-span-1">
-                            <div
-                                class="text-5xl md:text-6xl font-black text-[var(--primary-green)]"
-                            >
-                                5x
-                            </div>
-                            <p
-                                class="text-[11px] uppercase tracking-[0.24em] text-gray-500 font-black mt-2"
-                            >
-                                Salary Growth Potential
-                            </p>
-                            <div
-                                class="mt-5 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm"
-                            >
-                                <p
-                                    class="text-sm font-black text-[var(--text-dark)]"
-                                >
-                                    Remote Web3 Career Path
-                                </p>
-                                <p class="text-xs text-gray-600 mt-1">
-                                    Top upside with portfolio and practical
-                                    proof.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            </section> -->
 
             <section class="py-24 bg-[#E6F4F1] section-grid" id="price-story">
                 <div class="max-w-7xl mx-auto px-6">
